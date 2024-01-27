@@ -1,0 +1,43 @@
+-main ApplicationMain 
+-cp /usr/local/lib/haxe/lib/flixel/5,5,0
+-D flixel=5.5.0
+--macro openfl.utils._internal.ExtraParamsMacro.include()
+-cp /usr/local/lib/haxe/lib/openfl/9,3,2/src
+-D openfl=9.3.2
+--macro lime._internal.macros.DefineMacro.run()
+-cp /usr/local/lib/haxe/lib/lime/8,1,1/src
+-D lime=8.1.1
+--macro keep('IntIterator')
+-cp /usr/local/lib/haxe/lib/hscript/2,5,0
+-D hscript=2.5.0
+--macro hxcpp.debug.jsonrpc.Macro.injectServer()
+-cp /usr/local/lib/haxe/lib/hxcpp-debug-server/1,2,4
+-D hxcpp-debug-server=1.2.4
+-cp source
+-D lime-openal
+-D native
+-D lime-curl
+-D openfl-native
+-D openfl-disable-handle-error
+-D MAC_USE_CURRENT_SDK=1
+-D lime-harfbuzz
+-D tools=8.1.1
+-D lime-cairo
+-D lime-opengl
+-D no-compilation
+-D macos
+-D FLX_NO_TOUCH
+-D lime-native
+-D lime-vorbis
+-D MACOSX_DEPLOYMENT_TARGET=10.9
+-D lime-cffi
+-D mac
+-D desktop
+--remap flash:openfl
+--macro flixel.system.macros.FlxDefines.run()
+--connect
+6000
+-cpp export/macos/obj/
+-cp export/macos/haxe
+--macro keep("Main")
+-debug
